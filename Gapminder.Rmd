@@ -1,0 +1,41 @@
+---
+title: "Gapminder"
+author: "Kevin Xiong"
+date: "1/23/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, eval = FALSE, echo = FALSE}
+library(tidyverse)
+```
+
+## read gapminder csv. Note the readr:: prefix identifies which package it's in
+```{r, eval FALSE}
+gapminder <- readr::read_csv('https://raw.githubusercontent.com/OHI-Science/data-science-training/master/data/gapminder.csv')
+```
+## explore gapminder dataset
+Currently we are trying to explore the gapminder dataset, this is just a comment
+```{r}
+head(gapminder)
+tail(gapminder)
+head(gapminder, 10)
+str(gapminder)
+names(gapminder)
+dim(gapminder)
+ncol(gapminder)
+```
+## exploring single variable in gapminder
+```{r}
+summary(gapminder)
+head(gapminder$country)
+head(gapminder$lifeExp)
+str(gapminder$lifeExp)
+```
+filter(gapminder, lifeExp<29)
+filter(gapminder, country == "Mexico")
+filter(gapminder, country %in% c("Mexico", "Peru"))
+
